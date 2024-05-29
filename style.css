@@ -1,59 +1,103 @@
-body {
+* {
     margin: 0;
-    background-image: url(./images/back.png);
-    background-repeat: no-repeat;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 50px 0;
+}
+
+.main {
     font-family: 'StratosSkyeng', sans-serif;
-    background-position: bottom;
+    background-color: #D6D3CA;
+    width: 1200px;
+    padding: 40px 53px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 5px 1px grey;
 }
 
 .header {
-    height: 100vh;
-    background-image: url(./images/head.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    margin-bottom: 42px;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    text-align: center;
+}
+
+.header-date {
+    text-align: right;
+    font-size: 36px;
+}
+
+.header-title {
+    font-size: 96px;
+    font-style: italic;
+    text-transform: uppercase;
 }
 
 .content {
-    padding-top:  75px;
-    border-top: 25px solid black;
-    position: relative;
+    padding: 51px;
+    border: 4px solid black;
+    padding-bottom: 37px;
+    padding-top: 37px;
 }
 
-#table {
-    width: 1200px;
-    height: 100vh;
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-
-tr, td {
-    border: 25px solid white;
+.content-title {
+    font-size: 64px;
+    font-style: italic;
     text-align: center;
-    vertical-align: bottom;
+    padding-bottom: 55px;
+}
+
+.content-table {
+    vertical-align: top;
+}
+
+.table-row {
+    vertical-align: top;
+}
+
+.table-data {
+    padding-right: 27px;
+}
+
+.table-data-text,
+.table-data-text-last {
+    font-size: 24px;
+}
+
+.table-data-text {
+    margin-bottom: 41px;
 }
 
 img {
-    width: 560px;
+    width: 483px;
+    height: 550px;
 }
 
-p {
-    background-color: white;
-    width: max-content;
-    font-size: 30px;
-    border-radius: 25px;
-    margin: 23px auto;
-    padding: 10px 30px;
+.advert-title {
+    font-size: 36px;
+    font-style: italic;
+    margin-top: 37px;
+    border: 4px solid black;
+    border-left: 0;
+    border-right: 0;
 }
 
-a {
-    display: block;
-    background-color: blueviolet;
-    color: white;
-    padding:  11px 30px;
-    border-radius: 50px;
-    font-size: 38px;
-    position: absolute;
-    right: 80px;
-    bottom: 75px;
+.adverts {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.advert-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 347px;
+    margin-right: 22px;
+    font-size: 20px;
+}
+
+/* :last-of-type - это псевдокласс, который выбирает самый последний элемент из всех элементов одного типа (соседних) */
+.advert-item:last-of-type {
+    margin-right: 0;
 }
