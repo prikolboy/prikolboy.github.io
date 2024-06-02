@@ -3,94 +3,64 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Газета "Из рук в голову"</title>
+    <title>Галерея нейро-картин</title>
     <link rel="stylesheet" href="./fonts/fonts.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="main">
-        <div class="header">
-            <p class="header-date">29 февраля 2049</p>
-            <h1 class="header-title">Из рук в голову</h1>
+    <div class="header">
+        <div class="header__overlay">
+            <div class="header__link">
+                <a href="#gallery" class="header__anchor">Галерея</a>
+            </div>
+            <h1 class="header__title">Выставка нейро-картин</h1>
         </div>
-        <div class="content">
-            <h2 class="content-title">СТРАШНАЯ ЧУМА ОБЕЗЬЯН-ЖАБ ПОГЛОТИЛА КАМЕННЫЙ ЛЕС!</h2>
-            <table class="content-table">
-                <tr class="table-row">
-                    <td class="table-data">
-                        <p class="table-data-text">
-                            Каменный лес, находящийся невдалеке от Портала Обратной Стороны, превратился в эпицентр
-                            неслыханной катастрофы. Местные жители в панике, пытаются найти укрытие от внезапно
-                            появившейся чумы обезьян-жаб, а местные власти бьют тревогу.
-                        </p>
-                        <p class="table-data-text">
-                            По информации от старейшин деревни, волшебные обезьяны-жабы обычно обитают вблизи
-                            тропических ручьев и редко выходят за пределы своего места жительства. Однако несколько дней
-                            назад деревенские старейшины начали получать видения будущего о страшной стихии. Какое-то
-                            невиданное проклятие превратило безобидных волшебных существ в настоящую чуму.
-                        </p>
-                    </td>
-                    <td>
-                        <img src="./images/zhaba.gif" alt="Gif: Жаба ест дерево">
-                    </td>
-                </tr>
-                <tr class="table-row">
-                    <!-- colspan - это атрибут, который склеивает несколько ячеек в одну -->
-                    <td colspan="2">
-                        <p class="table-data-text">
-                            Обезьяны-жабы, которые обычно питаются лишь маленькими насекомыми, теперь поглощают все
-                            каменные деревья на своем пути, вызывая невиданный ужас среди местных жителей. Укрывающиеся
-                            в пещерах люди беспомощно наблюдают, как их долголетний гордый дом, Каменный лес, исчезает с
-                            лица Земли.
-                        </p>
-                    </td>
-                </tr>
-                <tr class="table-row">
-                    <td colspan="2">
-                        <p  class="table-data-text-last">
-                            Необходима помощь сильнейших волшебников, способных справиться с этой угрозой. Визирь
-                            деревни заявил: "Нам нужны волшебники, которые смогут не только обуздать этих зверей, но и
-                            восстановить нашу родину. Призываем союзников со всего мира встать на защиту Каменного
-                            леса!"
-                        </p>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="advert">
-            <p class="advert-title">РЕКЛАМА! РЕКЛАМА! РЕКЛАМА! РЕКЛАМА! РЕКЛАМА! РЕКЛАМА! РЕКЛАМА!</з>
-            <ul class="adverts">
-                <li class="advert-item">
-                    <h3 class="advert-item-title">
-                        Защищайся на Волшебном Уровне! Попробуйте нашу новую Защитную Сферу!
-                    </h3>
-                    <p class="advert-item-text">
-                        Погрузись в волшебный мир безопасности с нашими прочными и надежными Защитными Сферами -
-                        исключительное качество и эффективность! Мир изменился, а наша защита остается непоколебимой.
-                    </p>
-                </li>
-                <li class="advert-item">
-                    <h3 class="advert-item-title">
-                        Повышение Полётных Навыков с Фееричными Кистями!
-                    </h3>
-                    <p class="advert-item-text">
-                        Мечтаешь управлять облаками? Захватите ветер под контроль с нашими новыми волшебными кистями!
-                        Ощутите скорость, контроль и волнение, покоряя небесные просторы.
-                    </p>
-                </li>
-                <li class="advert-item">
-                    <h3 class="advert-item-title">
-                        Волшебные Сладости! Объедение без последствий!
-                    </h3>
-                    <p class="advert-item-text">
-                        Волшебство бывает не только загадочным, но и вкусным! Попробуйте наши новые волшебные сладости,
-                        они покорят ваш вкус и не отразятся на вашей фигуре! Волшебство в каждом кусочке!
-                    </p>
-                </li>
-            </ul>
+    </div>
+    <div class="content">
+        <ul class="gallery" id="gallery">
+            <li class="gallery__item">
+                <img src="./images/1.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/2.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/3.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/4.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/5.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/6.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/7.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/8.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/9.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/10.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/11.png" class="image">
+            </li>
+            <li class="gallery__item">
+                <img src="./images/12.png" class="image">
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="footer__overlay">
+            <p class="footer__text">Сделано руками Сергея</p>
         </div>
     </div>
 </body>
