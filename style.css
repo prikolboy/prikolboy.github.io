@@ -112,6 +112,7 @@ body {
     background-image: url(./images/Like.svg);
     width: 45px;
     height: 38px;
+    z-index: 2;
 }
 
 .buttonLike:hover {
@@ -127,6 +128,7 @@ body {
     background-image: url(./images/Choosen.svg);
     width: 36px;
     height: 38px;
+    z-index: 2;
 }
 
 .buttonChoosen:hover {
