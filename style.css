@@ -71,7 +71,39 @@ body {
 
 .gallery__item {
     max-width: 330px;
+    position: relative;
 }
+
+.buttonLike {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    bottom: 24px;
+    left: 213px;
+    background-image: url(./images/Like.svg);
+    width: 45px;
+    height: 38px;
+}
+
+.buttonLike:hover {
+    background-image: url(./images/Like_active.svg);
+}
+
+.buttonChoosen {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    bottom: 24px;
+    left: 273px;
+    background-image: url(./images/Choosen.svg);
+    width: 36px;
+    height: 38px;
+}
+
+.buttonChoosen:hover {
+    background-image: url(./images/Choosen_active.svg);
+}
+
 
 .image {
     width: 100%;
