@@ -1,10 +1,12 @@
+@import url(./fonts/fonts.css);
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: 'Verdana', 'StratosSkyeng', sans-serif;
+    font-family: 'Rubik', 'Verdana', 'StratosSkyeng', sans-serif;
     font-size: 16px;
     min-height: 100vh;
     background-color: white;
