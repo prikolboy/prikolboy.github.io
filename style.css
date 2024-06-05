@@ -1,103 +1,231 @@
+@import url(./fonts/fonts.css);
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    padding: 50px 0;
+    font-family: 'Rubik', 'Verdana', 'StratosSkyeng', sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+    background-color: white;
 }
 
-.main {
-    font-family: 'StratosSkyeng', sans-serif;
-    background-color: #D6D3CA;
-    width: 1200px;
-    padding: 40px 53px;
-    margin: 0 auto;
-    box-shadow: 1px 1px 5px 1px grey;
+.header__chapter {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    color: #8D39C0;
 }
 
-.header {
-    margin-bottom: 42px;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
-    text-align: center;
+.header__title {
+    color: #8D39C0;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 150%;
 }
 
-.header-date {
-    text-align: right;
-    font-size: 36px;
-}
-
-.header-title {
-    font-size: 96px;
-    font-style: italic;
-    text-transform: uppercase;
-}
 
 .content {
-    padding: 51px;
-    border: 4px solid black;
-    padding-bottom: 37px;
-    padding-top: 37px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    height: 100%;
+    box-sizing: border-box;
 }
 
-.content-title {
-    font-size: 64px;
-    font-style: italic;
+
+.content__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 970px;
+    padding: 63px 155px;
+    min-height: 100%;
+}
+
+.content__text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 46px 0;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.content__footer {
     text-align: center;
-    padding-bottom: 55px;
+    color: rgba(0, 0, 0, .5);
 }
 
-.content-table {
-    vertical-align: top;
+.content__settings {
+    max-width: 640px;
+    width: 100%;
+    background: linear-gradient(180deg, #CEAAE4 0%, #E8D7F2 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 63px 0;
+    box-sizing: border-box;
+    position: relative;
 }
 
-.table-row {
-    vertical-align: top;
+.settings {
+    width: 60%;
 }
 
-.table-data {
-    padding-right: 27px;
+.settings__close {
+    width: 60px;
+    height: 66px;
+    background-image: url(images/Close_button.svg);
+    background-color: transparent;
+    border: none;
+
+    position: absolute;
+    top: 50%;
+    right: 95%;
+    cursor: pointer;
+    /* Плавная смена состояния */
+    transition: right 0.05s;
 }
 
-.table-data-text,
-.table-data-text-last {
-    font-size: 24px;
+.settings__close:hover {
+    right: 96%;
 }
 
-.table-data-text {
-    margin-bottom: 41px;
+.settings__close:active {
+    right: 95%;
 }
 
-img {
-    width: 483px;
-    height: 550px;
+.auth {
+    width: 100%;
+    margin-bottom: 80px;
 }
 
-.advert-title {
-    font-size: 36px;
-    font-style: italic;
-    margin-top: 37px;
-    border: 4px solid black;
-    border-left: 0;
-    border-right: 0;
+.auth__labels {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
 }
 
-.adverts {
-    list-style-type: none;
-    margin-top: 20px;
+.auth__label {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 150%;
 }
 
-.advert-item {
-    display: inline-block;
-    vertical-align: top;
-    width: 347px;
-    margin-right: 22px;
+.auth__sublabel {
     font-size: 20px;
+    line-height: 150%;
+    font-weight: 400;
 }
 
-/* :last-of-type - это псевдокласс, который выбирает самый последний элемент из всех элементов одного типа (соседних) */
-.advert-item:last-of-type {
-    margin-right: 0;
+.auth__btn {
+    padding: 9px 31px;
+    border-radius: 32px;
+    background-color: #8D39C0;
+    color: white;
+    border: none;
+    width: min-content;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 26px;
+    margin-top: 30px;
+}
+
+.auth__btn:hover {
+    opacity: .7;
+}
+
+.settings__form, .auth {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings__label {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 150%;
+    margin-bottom: 13px;
+}
+
+.label {
+    background-color: white;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 23px;
+    line-height: 150%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.input {
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 0 14px;
+    line-height: 150%;
+    font-size: 23px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.settings__input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 0 14px;
+    border-radius: 8px;
+    background-color: rgba(231, 235, 236, 0.50);
+    outline: none;
+    border: none;
+    font-size: 23px;
+    line-height: 150%;
+    width: 100%;
+}
+
+.settings__font-color {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0; 
+}
+
+.settings__font-size {
+    text-align: center;
+}
+
+.settings__background-color-label {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #878D92;
+    cursor: pointer;
+}
+
+.white {
+    background-color: white;
+}
+
+.bisque {
+    background-color: bisque;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.black {
+    background-color: black;
 }
