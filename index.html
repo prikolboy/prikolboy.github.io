@@ -3,162 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Читалка</title>
+    <title>Список дел</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-    <main class="content">
+<body class="body">
+    <div class="app">
+        <form class="form">
+            <input type="text" class="form-task" placeholder="Добавить запись">
+            <button class="button"></button>
+        </form>
+        <ul class="task-list">
 
-        <div class="content__wrap">
-            <div class="header">
-                <h1 class="header__chapter">Глава 1</h1>
-                <h2 class="header__title">Таинственная находка</h2>
-            </div>
+        </ul>
+    </div>
+    <template id="template">
+        <li class="task">
+            <input type="text" class="task__text" value="">
+            <button class="task__delete"></button>
+        </li>
+    </template>
 
-            <div class="content__text">
-                <p class="text">
-                    Приключение начинается обычным вечером в черте поселения по имени Маленький Икот, где Эрник Безриков
-                    —
-                    скромный
-                    и наивный местный кузнец, по несчастью обладал любопытством, превосходящим его благоразумие.
-                    Говорят, в
-                    своем
-                    беспокойном гении он был до того безрассуден, что нередко спрашивал, чем заняты звезды над нами. И
-                    вот
-                    однажды,
-                    после долгого дня работы, сидя у костра и глядя в изумрудное небо, он увидел самое любопытное
-                    зрелище
-                    своей
-                    жизни.
-                </p>
-                <p class="text">
-                    Падающая звезда уронила в его сад нечто сияющее и загадочное. Поначалу Эрник задумался, не продукт
-                    ли
-                    это его
-                    переутомленного воображения, но наутро он обнаружил странное устройство, покрытое символами, от
-                    которых
-                    голова
-                    идет кругом. Переминаясь с ноги на ногу, он посмотрел на него и подумал: "Пожалуй, в этот раз мое
-                    любопытство зашло
-                    слишком далеко".
-                </p>
-                <p class="text">
-                    Аппарат включился, и голос, исходивший из неизвестного устройства, предложил: "Готовы ли вы к
-                    путешествию, Эрник Безриков?" Он проглотил и ответил "Я... готов", удивляясь
-                    сноровке, которой он и сам не ожидал.
-                </p>
-                <p class="text">
-                    Аппарат подтвердил выбор и тут же заполонил кабину золотистым светом. Эрник ощутил странное ощущение
-                    его
-                    страха,
-                    скатывающегося в нежное волнение, а затем в несдерживаемое любопытство. Его ступни отчалили от земли
-                    его
-                    родного
-                    города, взлетев выше и выше, пока Икот не стал не более чем искоркой в огромной тьме космоса.
-                </p>
-                <p class="text">
-                    В этом стремительном путешествии Эрник видел звезды, близко и ярко, как никогда прежде. Он летел на
-                    скорости,
-                    скорее ощущаемой, чем видимой. Он видел миры, самое понятие о которых развергло бы мозг менее
-                    подготовленного
-                    путешественника на тысячи кусочков, как кирпич.
-                </p>
-                <p class="text">
-                    Каждый пейзаж в этом путешествии по звездам был как картина, которой он сначала любовался, затем
-                    проникал туда,
-                    где еще никто не бывал. С каждым очередным чудом он осознавал, насколько велик и неудержим этот
-                    Вселенский
-                    океан. Вокруг него вихрили звезды, планеты и галактики, заставляя его чувствовать себя ребенком,
-                    первым
-                    разом
-                    влюбленным в свою игрушку.
-                </p>
-                <p class="text">
-                    На протяжении всего этого, Эрник казался прозрачным и неподвижным, точно был именно таким.
-                    Астральные
-                    кинжалы,
-                    бесконечные пустоши космоса, всемогущие планеты. Они все превращались из гигантов в маленьких
-                    гномиков,
-                    а затем
-                    вновь в гигантов — все в руках трактовщика звезд, Эрника Безрикова.
-                </p>
-            </div>
-
-            <div class="content__footer">
-                <p class="pages">123 / 768</p>
-            </div>
-        </div>
-
-        <div class="content__settings">
-
-            <button class="settings__close" title="Закрыть настройки"></button>
-
-            <div class="settings">
-
-                <form class="auth">
-                    <div class="auth__labels">
-                        <h3 class="auth__label">Регистрация / вход</h3>
-                        <h4 class="auth__sublabel">Чтобы сохранить настройки</h4>
-                    </div>
-                    <label class="label">
-                        Имя:
-                        <input type="text" placeholder="Имя" class="input">
-                    </label>
-                    <label class="label">
-                        Email:
-                        <input type="email" class="input">
-                    </label>
-                    <label class="label">
-                        Пароль:
-                        <input type="password" class="input">
-                    </label>
-                    <input type="button" value="Войти" class="auth__btn">
-                </form>
-
-                <form class="settings__form">
-                    <h3 class="settings__label">Настройки</h3>
-                    <label class="label">
-                        <select class="settings__input">
-                            <option value="StratosSkyeng">StratosSkyeng</option>
-                            <option value="Vendana">Vendana</option>
-                            <option value="Open Sans">Open Sans</option>
-                        </select>
-                    </label>
-                    <label class="label">
-                        Размер:
-                        <input type="number" class="settings__input settings__font-size" min="8" max="72" step="1" value="16">
-                    </label>
-                    <label class="label">
-                        Цвет:
-                        <input type="color" class="settings__input settings__font-color">
-                    </label>
-                    <label class="label">
-                        Интервал:
-                        <input type="range" class="settings__input" min="0" max="300" step="10" value="50">
-                    </label>
-                    <div class="label">
-                        Цвет фона:
-                        <label class="settings__background-color-label white">
-                            <input type="radio" name="font-color" id="">
-                        </label>
-                        <label class="settings__background-color-label bisque">
-                            <input type="radio" name="font-color" id="">
-                        </label>
-                        <label class="settings__background-color-label grey">
-                            <input type="radio" name="font-color" id="">
-                        </label>
-                        <label class="settings__background-color-label black">
-                            <input type="radio" name="font-color" id="">
-                        </label>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-
-    </main>
+    <script src="./script.js"></script>
 </body>
 
 </html>
