@@ -1,27 +1,61 @@
-let taskInput = document.querySelector(".form-task");
-let addBtn = document.querySelector(".button");
-let tasklist = document.querySelector(".task-list");
+const startButtonSelector = ".button__start";
+const stopButtonSelector = ".button__stop";
+const hoursButtonSelector = "#hours";
+const minutesInputSelector = "#minutes";
+const secondsInputSelector = "#seconds";
 
-function addNewTask(event) {
+const hoursInput = document.querySelector(hoursButtonSelector);
+const minutesInput = document.querySelector(minutesInputSelector);
+const secondsInput = document.querySelector(secondsInputSelector);
+const StartBtn = document.querySelector(startButtonSelector);
+const StopBtn = document.querySelector(stopButtonSelector);
+
+let remainingTime;
+
+let intervalID;
+let hours;
+let minutes;
+let seconds;
+
+setTimeout(() => {
+
+}, )
+
+function startTimer(event) {
     event.preventDefault();
+    hours = parseInt(hoursInput.value);
+    minutes = parseInt(minutesInput.value);
+    seconds = parseInt(secondsInput.value);
 
-    let task = taskInput.value;
+    remainingTime = hours * 3600 + minutes * 60 + seconds;
+    StartBtn.classList.add('hide');
+    StopBtn.classList.remove('hide');
 
-    if (!task) return;
-
-    let newItem = document.querySelector('#template').cloneNode(true).content;
-
-    newItem.querySelector('.task__text').value = task;
-    newItem.querySelector('.task__delete').addEventListener("click", deleteTask)
-
-    tasklist.append(newItem);
-    taskInput.value = "";
-    taskInput.focus();
+    intervalID = setInterval(updateTimer, 1000);
 }
 
-function deleteTask(event) {
-    let target = event.target.parentElement;
-    target.remove();
+function updateTimer() {
+    remainingTime = remainingTime -1;
+
+    hours = Math.floor(remainingTime / 3600);
+    minutes = Math.floor(remainingTime % 3600 / 60);
+    seconds = remainingTime % 60;
+
+    hoursInput.value = hours.toString().padStart(2, "0");
+    minutesInput.value = minutes.toString().padStart(2, "0");
+    secondsInput.value = seconds.toString().padStart(2, "0");
+
+    if (remainingTime == 0) {
+        stopTimer();
+    }
 }
 
-addBtn.addEventListener('click', addNewTask);
+function stopTimer() {
+    clearInterval(intervalID);
+    StartBtn.classList.remove('hide');
+    StopBtn.classList.add('hide');
+}
+
+
+StartBtn.addEventListener("click", startTimer);
+StopBtn.addEventListener("click", stopTimer);
