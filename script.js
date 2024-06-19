@@ -77,6 +77,7 @@ function resetGame() {
         setTimeout(() => {
             ball.x = map.width / 2;
             ball.y = map.height / 2;
+            ball.dx = -ball.dx
             ball.isResetted = false;
         }, 1000);
     }
@@ -149,7 +150,7 @@ function ControlBotRight() {
 function ControlBotLeft() {
     let direction = 0;
 
-    if (ball.x < map.height / 2) {
+    if (ball.x < map.height + grid / 2) {
         if (ball.y < leftPaddle.y) {
             direction = -1;
         }
