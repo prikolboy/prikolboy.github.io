@@ -1,3 +1,5 @@
+@import url(./fonts/fonts.css);
+
 html,
 body {
     width: 100%;
@@ -13,3 +15,10 @@ body {
     flex-direction: column;
 }
 
+
+.table_counter {
+    margin: 0;
+    color: white;
+    font-family: 'PixelFont';
+    font-size: 20px;
+}

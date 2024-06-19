@@ -2,9 +2,15 @@ const map = document.querySelector("canvas");
 const canvas = map.getContext('2d');
 canvas.fillStyle = "rgb(255, 255, 255)";
 
+const PointsL = document.querySelector('.left');
+const PointsR = document.querySelector('.right');
+
 const grid = 15;
 const paddleHeight = grid * 5;
 const maxPaddleY = map.height - grid - paddleHeight;
+
+let LeftPoints = 0;
+let RightPoints = 0;
 
 let ballSpeed = 5;
 let paddleSpeed = 7;
@@ -77,9 +83,18 @@ function resetGame() {
         setTimeout(() => {
             ball.x = map.width / 2;
             ball.y = map.height / 2;
-            ball.dx = -ball.dx
+            ball.dx = -ball.dx;
             ball.isResetted = false;
         }, 1000);
+        if (ball.x > rightPaddle.x) {
+            LeftPoints + 1;
+            PointsL.textContent = LeftPoints;
+            PointsR.textContent = RightPoints;
+        } else if (ball.x < leftPaddle.x) {
+            RightPoints + 1;
+            PointsL.textContent = LeftPoints;
+            PointsR.textContent = RightPoints;
+        }
     }
 }
 
