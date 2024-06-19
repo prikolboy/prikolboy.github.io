@@ -80,21 +80,19 @@ function moveBall() {
 function resetGame() {
     if ((ball.x < 0 || ball.x > map.width) && !ball.isResetted) {
         ball.isResetted = true;
+        if (ball.x > rightPaddle.x) {
+            LeftPoints += 1;
+        } else if (ball.x < leftPaddle.x) {
+            RightPoints += 1;
+        }
         setTimeout(() => {
             ball.x = map.width / 2;
             ball.y = map.height / 2;
             ball.dx = -ball.dx;
             ball.isResetted = false;
+            PointsL.textContent = LeftPoints;
+            PointsR.textContent = RightPoints;
         }, 1000);
-        if (ball.x > rightPaddle.x) {
-            LeftPoints + 1;
-            PointsL.textContent = LeftPoints;
-            PointsR.textContent = RightPoints;
-        } else if (ball.x < leftPaddle.x) {
-            RightPoints + 1;
-            PointsL.textContent = LeftPoints;
-            PointsR.textContent = RightPoints;
-        }
     }
 }
 
@@ -172,6 +170,8 @@ function ControlBotLeft() {
         else if (ball.y > leftPaddle.y + paddleHeight) {
             direction = 1;
         }
+    } else {
+        direction = 0;
     }
 
     leftPaddle.y += paddleSpeed * direction;
