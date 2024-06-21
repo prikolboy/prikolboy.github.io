@@ -1,19 +1,18 @@
-@import url(./fonts/fonts.css);
-
 * {
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Rubik', 'Verdana', 'StratosSkyeng', sans-serif;
+:root {
     font-size: 16px;
-    min-height: 100vh;
+    font-family: 'StratosSkyeng', sans-serif;
     background-color: white;
+    color: #000;
+    min-width: 360px;
 }
 
 .header__chapter {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 150%;
     color: #8D39C0;
@@ -21,7 +20,7 @@ body {
 
 .header__title {
     color: #8D39C0;
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 600;
     line-height: 150%;
 }
@@ -40,8 +39,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 970px;
     padding: 63px 155px;
+    width: 100%;
     min-height: 100%;
 }
 
@@ -53,7 +52,7 @@ body {
 }
 
 .text {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 150%;
 }
 
@@ -63,20 +62,31 @@ body {
 }
 
 .content__settings {
-    max-width: 640px;
-    width: 100%;
+    width: 40%;
+    min-width: 437px;
+    min-height: 100vh;
     background: linear-gradient(180deg, #CEAAE4 0%, #E8D7F2 100%);
+    color: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 63px 0;
     box-sizing: border-box;
     position: relative;
+    right: 0;
+}
+
+.content__settings_hide {
+    right: -40%;
+    position: fixed;
 }
 
 .settings {
-    width: 60%;
+    width: 80%;
+}
+
+.settings_hide {
+    display: none;
 }
 
 .settings__close {
@@ -87,19 +97,24 @@ body {
     border: none;
 
     position: absolute;
-    top: 50%;
-    right: 95%;
+    top: 100px;
+    right: calc(100% - 60px / 2.5);
     cursor: pointer;
     /* Плавная смена состояния */
-    transition: right 0.05s;
+    transition: .3s;
+    transform: rotateZ(0deg) translate(0px);
+}
+
+.settings__close_reverse {
+    transform: rotateZ(180deg) translate(10px);
 }
 
 .settings__close:hover {
-    right: 96%;
+    right: calc(100% - 60px / 3);
 }
 
 .settings__close:active {
-    right: 95%;
+    right: calc(100% - 60px / 2);
 }
 
 .auth {
@@ -114,18 +129,18 @@ body {
 }
 
 .auth__label {
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
     line-height: 150%;
 }
 
 .auth__sublabel {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 150%;
     font-weight: 400;
 }
 
-.auth__btn {
+.button {
     padding: 9px 31px;
     border-radius: 32px;
     background-color: #8D39C0;
@@ -134,11 +149,11 @@ body {
     width: min-content;
     margin: 0 auto;
     cursor: pointer;
-    font-size: 26px;
+    font-size: 1.625rem;
     margin-top: 30px;
 }
 
-.auth__btn:hover {
+.button:hover {
     opacity: .7;
 }
 
@@ -149,7 +164,7 @@ body {
 }
 
 .settings__label {
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
     line-height: 150%;
     margin-bottom: 13px;
@@ -159,7 +174,7 @@ body {
     background-color: white;
     padding: 8px 10px;
     border-radius: 8px;
-    font-size: 23px;
+    font-size: 1.5rem;
     line-height: 150%;
     display: flex;
     justify-content: space-between;
@@ -173,7 +188,7 @@ body {
     border-radius: 8px;
     padding: 0 14px;
     line-height: 150%;
-    font-size: 23px;
+    font-size: 1.5rem;
     box-sizing: border-box;
     width: 100%;
 }
@@ -188,15 +203,15 @@ body {
     background-color: rgba(231, 235, 236, 0.50);
     outline: none;
     border: none;
-    font-size: 23px;
+    font-size: 1.5rem;
     line-height: 150%;
     width: 100%;
 }
 
-.settings__font-color {
+.settings__font-color, .settings__back-color {
     background-color: transparent;
     cursor: pointer;
-    padding: 0; 
+    padding: 0;
 }
 
 .settings__font-size {
@@ -214,6 +229,10 @@ body {
     cursor: pointer;
 }
 
+.hide {
+    display: none;
+}
+
 .white {
     background-color: white;
 }
@@ -228,4 +247,52 @@ body {
 
 .black {
     background-color: black;
+}
+
+@media (max-width: 1100px) {
+    .content__settings {
+        position: fixed;
+        min-width: 0;
+        width: 90%;
+    }
+
+    .content__settings_hide {
+        right: -90%;
+    }
+
+    .content__wrap {
+        padding: 60px 40px;
+    }
+
+    .header__chapter {
+        font-size: 1rem;
+    }
+
+    .header__title {
+        font-size: 1.5rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .settings__close {
+        top: 100px;
+    }
+
+    .settings__close_reverse {
+        transform: rotateZ(180deg) translate(25px);
+    }
+
+    .settings__input {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .label-back-color {
+        flex-wrap: wrap;
+        justify-content: start;
+    }
 }

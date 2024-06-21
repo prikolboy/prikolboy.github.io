@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Читалка</title>
+    <link rel="stylesheet" href="./fonts/fonts.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="script" href="./script.js">
 </head>
 
 <body>
@@ -97,60 +99,46 @@
 
             <div class="settings">
 
-                <form class="auth">
-                    <div class="auth__labels">
-                        <h3 class="auth__label">Регистрация / вход</h3>
-                        <h4 class="auth__sublabel">Чтобы сохранить настройки</h4>
-                    </div>
-                    <label class="label">
-                        Имя:
-                        <input type="text" placeholder="Имя" class="input">
-                    </label>
-                    <label class="label">
-                        Email:
-                        <input type="email" class="input">
-                    </label>
-                    <label class="label">
-                        Пароль:
-                        <input type="password" class="input">
-                    </label>
-                    <input type="button" value="Войти" class="auth__btn">
-                </form>
-
                 <form class="settings__form">
                     <h3 class="settings__label">Настройки</h3>
                     <label class="label">
-                        <select class="settings__input">
-                            <option value="StratosSkyeng">StratosSkyeng</option>
-                            <option value="Vendana">Vendana</option>
-                            <option value="Open Sans">Open Sans</option>
+                        Шрифт:
+                        <select class="settings__input settings__font-change">
+                            <option value="StratosSkyeng"selected>StratosSkyeng</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Fira Sans">Fira Sans</option>
                         </select>
                     </label>
+
                     <label class="label">
                         Размер:
-                        <input type="number" class="settings__input settings__font-size" min="8" max="72" step="1" value="16">
+                        <input type="number" class="settings__font-size settings__input" value="16" min="10" max="26">
+                        px
                     </label>
+
                     <label class="label">
                         Цвет:
-                        <input type="color" class="settings__input settings__font-color">
+                        <input type="color" class="settings__font-color settings__input">
                     </label>
+
                     <label class="label">
                         Интервал:
-                        <input type="range" class="settings__input" min="0" max="300" step="10" value="50">
+                        <input type="range" class="settings__input settings__interval" min="1" max="3" step="0.1" value="1.5">
                     </label>
-                    <div class="label">
+
+                    <div class="label label-back-color">
                         Цвет фона:
                         <label class="settings__background-color-label white">
-                            <input type="radio" name="font-color" id="">
+                            <input type="radio" class="settings__back-color" name="font-color" value="white" checked>
                         </label>
                         <label class="settings__background-color-label bisque">
-                            <input type="radio" name="font-color" id="">
+                            <input type="radio" class="settings__back-color" name="font-color" value="bisque">
                         </label>
                         <label class="settings__background-color-label grey">
-                            <input type="radio" name="font-color" id="">
+                            <input type="radio" class="settings__back-color" name="font-color" value="grey">
                         </label>
                         <label class="settings__background-color-label black">
-                            <input type="radio" name="font-color" id="">
+                            <input type="radio" class="settings__back-color" name="font-color" value="black">
                         </label>
                     </div>
                 </form>
@@ -159,6 +147,8 @@
         </div>
 
     </main>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
