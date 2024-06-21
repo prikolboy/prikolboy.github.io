@@ -15,6 +15,10 @@ let RightPoints = 0;
 let ballSpeed = 5;
 let paddleSpeed = 7;
 
+let multiplySpeed = Number(prompt(`Введите скорость игры. \nВнимание: При больших скоростях могут быть ошибки.\nРекомендуется не больше x2 скорости`))
+
+
+
 const leftPaddle = {
     x: grid * 2,
     y: map.height / 2 - paddleHeight / 2,
@@ -64,8 +68,8 @@ function renderRightPaddle() {
 }
 
 function movePaddles() {
-    leftPaddle.y += leftPaddle.dy;
-    rightPaddle.y += rightPaddle.dy;
+    leftPaddle.y += leftPaddle.dy * multiplySpeed;
+    rightPaddle.y += rightPaddle.dy * multiplySpeed;
 }
 
 function renderBall() {
@@ -73,8 +77,8 @@ function renderBall() {
 }
 
 function moveBall() {
-    ball.x += ball.dx;
-    ball.y += ball.dy;
+    ball.x += ball.dx * multiplySpeed;
+    ball.y += ball.dy * multiplySpeed;
 }
 
 function resetGame() {
@@ -89,10 +93,11 @@ function resetGame() {
             ball.x = map.width / 2;
             ball.y = map.height / 2;
             ball.dx = -ball.dx;
+            ball.dy = -ball.dy;
             ball.isResetted = false;
             PointsL.textContent = LeftPoints;
             PointsR.textContent = RightPoints;
-        }, 1000);
+        }, 1000 / multiplySpeed);
     }
 }
 
@@ -157,7 +162,7 @@ function ControlBotRight() {
         direction = 0;
     }
 
-    rightPaddle.y += paddleSpeed * direction;
+    rightPaddle.y += paddleSpeed * direction * multiplySpeed;
 }
 
 function ControlBotLeft() {
@@ -174,7 +179,7 @@ function ControlBotLeft() {
         direction = 0;
     }
 
-    leftPaddle.y += paddleSpeed * direction;
+    leftPaddle.y += paddleSpeed * direction * multiplySpeed;
 }
 
 function loop () {
