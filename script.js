@@ -146,7 +146,7 @@ function collidePaddlesWithBall() {
 function ControlBotRight() {
     let direction = 0;
 
-    if (ball.x > map.height / 2) {
+    if (ball.x > map.width / 2 + 100) {
         if (ball.y < rightPaddle.y) {
             direction = -1;
         }
@@ -163,7 +163,7 @@ function ControlBotRight() {
 function ControlBotLeft() {
     let direction = 0;
 
-    if (ball.x < map.height + grid / 2) {
+    if (ball.x < map.width / 2 + 100) {
         if (ball.y < leftPaddle.y) {
             direction = -1;
         }
