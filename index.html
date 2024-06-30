@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="script" href="./index.js">
+    <script src="./index.js" defer></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'>
 </head>
 <body>
     <div class="content">
@@ -19,11 +20,20 @@
                 <p class="state">Настроить количетсво карточек (от 2 до 6)</p>
                 <form class="board__form">
                     <input class="board__input" type="number" placeholder="Введите число">
-                    <button class="board__button">Начать игру</button>
+                    <button class="board__button" type="button">Начать игру</button>
                 </form>
             </div>
         </main>
     </div>
-    
+    <template id="gameTableTemplate">
+        <div class="table"></div>
+        <button class="table__button" type="button">Рестарт</button>
+    </template>
+    <template id="cardTemplate">
+        <div class="card">
+            <i class="flipped-icon fa" id="flippedIcon"></i>
+            <i class="default-icon fa fa-question-circle"></i>
+        </div>
+    </template>
 </body>
 </html>
